@@ -1,0 +1,66 @@
+{
+  "name": "aurelia-content-loader",
+  "version": "1.0.1",
+  "description": "A starter kit for building an Aurelia plugin.",
+  "keywords": [
+    "aurelia",
+    "plugin",
+    "skeleton"
+  ],
+  "homepage": "http://aurelia.io",
+  "bugs": {
+    "url": "https://github.com/aurelia/skeleton-plugin/issues"
+  },
+  "license": "CC0-1.0",
+  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "main": "dist/commonjs/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/aurelia/skeleton-plugin"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/plugin-syntax-flow": "^7.2.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.2.3",
+    "@babel/plugin-transform-modules-amd": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/plugin-transform-modules-systemjs": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "aurelia-tools": "^2.0.0",
+    "babel-eslint": "^10.0.1",
+    "conventional-changelog": "3.0.5",
+    "del": "^3.0.0",
+    "eslint": "^4.19.1",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-bump": "^3.1.3",
+    "gulp-eslint": "^5.0.0",
+    "gulp-yuidoc": "^0.1.2",
+    "isparta": "^4.1.1",
+    "istanbul": "^0.4.5",
+    "jasmine-core": "^3.3.0",
+    "karma": "^4.0.0",
+    "karma-babel-preprocessor": "^8.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^2.0.1",
+    "karma-jspm": "2.2.3",
+    "object.assign": "^4.1.0",
+    "require-dir": "^1.2.0",
+    "run-sequence": "^2.2.1",
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^12.0.5"
+  },
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "dist": "dist/amd"
+    },
+    "devDependencies": {
+      "aurelia-polyfills": "^1.0.0"
+    }
+  }
+}
