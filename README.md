@@ -203,6 +203,8 @@ Fork the repo then clone it
 
 `$ git clone git@github.com:YourUsername/aurelia-content-loader.git && cd aurelia-content-loader`
 
+(or `$ npm install --global gulp-cli`): Install Gulp cli tool.
+
 `$ yarn` (or `$ npm i`): Install the dependencies;
 
 `$ yarn build` (or `$ npm run build`): Build to production;

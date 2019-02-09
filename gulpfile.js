@@ -1,3 +1,7 @@
-// all gulp tasks are located in the ./build/tasks directory
-// gulp configuration is in files in ./build directory
-require('require-dir')('build/tasks');
+
+const { clean } = require('./build/tasks/clean');
+const { series } = require('gulp');
+
+exports.clean = clean;
+
+exports.default = series(clean);
