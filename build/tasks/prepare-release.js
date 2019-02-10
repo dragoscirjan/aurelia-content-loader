@@ -1,4 +1,5 @@
 const args = require('../args');
+const { build } = require('./build');
 const bump = require('gulp-bump');
 const changelog = require('conventional-changelog');
 const { dest, src } = require('gulp');
@@ -27,3 +28,5 @@ exports.changelog = function(callback) {
     fs.writeFileSync(paths.doc + '/CHANGELOG.md', log);
   });
 };
+
+exports.prepareRelease = series(build, lint, bumpVersion, changelog);
