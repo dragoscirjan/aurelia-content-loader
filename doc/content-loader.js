@@ -231,7 +231,8 @@ export class SvgContentLoader {
       `-webkit-clip-path: url(#${this.svgId});`,
       `clip-path: url(#${this.svgId});`,
       `-webkit-animation-duration: ${this.animateDuration};`,
-      `animation-duration: ${this.animateDuration};`
+      `animation-duration: ${this.animateDuration};`,
+      // `height: ${parseFloat(this.height) != this.height ? this.height : this.height + 'px'};`
     ].join(' ');
   }
   /**

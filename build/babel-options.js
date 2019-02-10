@@ -1,4 +1,15 @@
-var path = require('path');
+const path = require('path');
+
+const presets = [
+  [
+    '@babel/preset-env', {
+      'targets': {
+        'browsers': [ 'last 2 versions' ]
+      },
+      'loose': true
+    }
+  ]
+];
 
 exports.base = function() {
   return {
@@ -11,35 +22,36 @@ exports.base = function() {
     comments: false,
     compact: false,
     code: true,
-    presets: [['es2015', { loose: true }], 'stage-1'],
+    presets: presets,
     plugins: [
-      'syntax-flow',
-      'transform-decorators-legacy',
-      'transform-flow-strip-types'
+      '@babel/plugin-syntax-flow',
+      ['@babel/plugin-proposal-decorators', { legacy: true }],
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
+      '@babel/plugin-transform-flow-strip-types'
     ]
   };
 };
 
 exports.commonjs = function() {
-  var options = exports.base();
-  options.plugins.push('transform-es2015-modules-commonjs');
+  const options = exports.base();
+  options.plugins.push('@babel/plugin-transform-modules-commonjs');
   return options;
 };
 
 exports.amd = function() {
-  var options = exports.base();
-  options.plugins.push('transform-es2015-modules-amd');
+  const options = exports.base();
+  options.plugins.push('@babel/plugin-transform-modules-amd');
   return options;
 };
 
 exports.system = function() {
-  var options = exports.base();
-  options.plugins.push('transform-es2015-modules-systemjs');
+  const options = exports.base();
+  options.plugins.push('@babel/plugin-transform-modules-systemjs');
   return options;
 };
 
 exports.es2015 = function() {
-  var options = exports.base();
-  options.presets = ['stage-1'];
+  const options = exports.base();
+  options.presets = presets;
   return options;
 };

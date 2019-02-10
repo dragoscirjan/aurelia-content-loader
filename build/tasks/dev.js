@@ -6,7 +6,7 @@ const args = require('../args');
 
 // updates dependencies in this folder
 // from folders in the parent directory
-exports['update-own-deps'] = function() {
+exports.updatOwnDeps = function() {
   return tools.updateOwnDependenciesFromLocalRepositories(args.depth);
 };
 
@@ -15,6 +15,6 @@ exports['update-own-deps'] = function() {
 // from where the command is executed,
 // then runs `npm install`
 // and `gulp build` for each repo
-exports['build-dev-env'] = function() {
+exports.buildDevEnv = function() {
   tools.buildDevEnv();
 };

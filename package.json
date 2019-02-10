@@ -1,6 +1,6 @@
 {
   "name": "aurelia-content-loader",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "A starter kit for building an Aurelia plugin.",
   "keywords": [
     "aurelia",
@@ -19,7 +19,7 @@
     "url": "http://github.com/aurelia/skeleton-plugin"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/plugin-proposal-decorators": "^7.1.2",
     "@babel/plugin-syntax-flow": "^7.2.0",
     "@babel/plugin-transform-flow-strip-types": "^7.2.3",

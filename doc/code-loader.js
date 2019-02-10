@@ -12,13 +12,15 @@ const svgTemplate = `<rect repeat.for="codeRange of codeRanges()" x="0" y.bind="
 </rect>`;
 
 /**
- * Content Loader class for code.
+ * 
  */
 @containerless
 @customElement('svg-code-loader')
 @inlineView(template(divTemplate, svgTemplate))
 export class SvgCodeLoader extends SvgContentLoader {
-  /** @var {Number} */
+  /**
+   * @var {Number}
+   */
   @bindable maxCodeChunks = 3;
   /**
    * Attached Event

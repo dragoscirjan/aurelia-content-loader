@@ -1,22 +1,22 @@
 
 import { PLATFORM } from 'aurelia-pal';
 
-import { SvgCodeLoader } from './code-loader';
+// import { SvgCodeLoader } from './code-loader';
 import { SvgContentLoader } from './content-loader';
-import { SvgFacebookLoader } from './facebook-loader';
-import { SvgInstagramLoader } from './instagram-loader';
-import { SvgListLoader } from './list-loader';
+// import { SvgFacebookLoader } from './facebook-loader';
+// import { SvgInstagramLoader } from './instagram-loader';
+// import { SvgListLoader } from './list-loader';
 
 export class Config {
   /**
    * @param {FrameworkConfiguration} aurelia
    */
   configure(aurelia) {
-    aurelia.globalResources(PLATFORM.moduleName('./code-loader'));
+    // aurelia.globalResources(PLATFORM.moduleName('./code-loader'));
     aurelia.globalResources(PLATFORM.moduleName('./content-loader'));
-    aurelia.globalResources(PLATFORM.moduleName('./facebook-loader'));
-    aurelia.globalResources(PLATFORM.moduleName('./instagram-loader'));
-    aurelia.globalResources(PLATFORM.moduleName('./list-loader'));
+    // aurelia.globalResources(PLATFORM.moduleName('./facebook-loader'));
+    // aurelia.globalResources(PLATFORM.moduleName('./instagram-loader'));
+    // aurelia.globalResources(PLATFORM.moduleName('./list-loader'));
   }
 }
 
