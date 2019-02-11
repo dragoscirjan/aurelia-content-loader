@@ -1,6 +1,6 @@
 
 const { build } = require('./build/tasks/build');
-const { buildDevEnv, updatOwnDeps } = require('./build/tasks/clean');
+const { buildDevEnv, updatOwnDeps } = require('./build/tasks/dev');
 const { clean } = require('./build/tasks/clean');
 const { cover, tdd, test } = require('./build/tasks/test');
 const { doc, docGenerate } = require('./build/tasks/doc');
@@ -8,21 +8,32 @@ const { lint } = require('./build/tasks/lint');
 const { bumpVersion, changelog, prepareRelease } = require('./build/tasks/prepare-release');
 const { series } = require('gulp');
 
-exports.build = build;
-exports['build-dev-env'] = buildDevEnv;
+// build/tasks/clean
 exports.clean = clean;
-exports.default = series(clean);
-exports.doc = series(docGenerate, doc);
-exports['doc-generate'] = docGenerate;
-exports.lint = lint;
+
+// build/tasks/build
+exports.build = build;
+
+// build/tasks/dev
+exports['build-dev-env'] = buildDevEnv;
 exports['updat-own-deps'] = updatOwnDeps;
 
-// prepare-release
+// build/tasks/doc
+exports.doc = series(docGenerate, doc);
+exports['doc-generate'] = docGenerate;
+
+// build/tasks/lint
+exports.lint = lint;
+
+// build/tasks/prepare-release
 exports['bump-version'] = bumpVersion;
 exports.changelog = changelog;
 exports['prepare-release'] = prepareRelease;
 
-// test
+// build/tasks/test
 exports.cover = cover;
 exports.tdd = tdd;
 exports.test = test;
+
+// default
+exports.default = series(clean, lint, build);
