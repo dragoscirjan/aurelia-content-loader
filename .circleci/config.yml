@@ -1,0 +1,102 @@
+version: 2.1
+
+# Grace to: [Teppei Sato](teppeis@gmail.com) https://github.com/teppeis-sandbox/circleci2-multiple-node-versions
+
+commands:
+  test-nodejs:
+    steps:
+      - run:
+          name: Versions
+          command: npm version
+      - checkout
+      - restore_cache:
+          keys:
+            - v{{ .Environment.CIRCLE_CACHE_VERSION }}-{{ arch }}-npm-cache-{{ .Branch }}-{{ .Environment.CIRCLE_JOB }}
+            - v{{ .Environment.CIRCLE_CACHE_VERSION }}-{{ arch }}-npm-cache-master-{{ .Environment.CIRCLE_JOB }}
+      - run:
+          name: Install dependencies
+          command: npm i
+      - run:
+          name: Install gulp cli
+          command: npm i -g gulp-cli
+      - run:
+          name: Lint
+          command: gulp lint
+      - run:
+          name: Build
+          command: gulp lint
+      # - run:
+      #     name: Test
+      #     command: gulp test
+      - save-npm-cache
+  test-nodejs-v6:
+    steps:
+      - run:
+          name: Versions
+          command: npm version
+      - checkout
+      - restore_cache:
+          keys:
+            - v{{ .Environment.CIRCLE_CACHE_VERSION }}-{{ arch }}-npm-lock-{{ .Branch }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "package-lock.json" }}
+            - v{{ .Environment.CIRCLE_CACHE_VERSION }}-{{ arch }}-npm-lock-master-{{ .Environment.CIRCLE_JOB }}-{{ checksum "package-lock.json" }}
+            - v{{ .Environment.CIRCLE_CACHE_VERSION }}-{{ arch }}-npm-cache-{{ .Branch }}-{{ .Environment.CIRCLE_JOB }}
+            - v{{ .Environment.CIRCLE_CACHE_VERSION }}-{{ arch }}-npm-cache-master-{{ .Environment.CIRCLE_JOB }}
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Install gulp cli
+          command: npm install -g gulp-cli
+      - run:
+          name: Lint
+          command: gulp lint
+      - run:
+          name: Build
+          command: gulp lint
+      # - run:
+      #     name: Test
+      #     command: gulp test
+      - save-npm-lock
+      - save-npm-cache
+  save-npm-lock:
+    steps:
+      - save_cache:
+          key: v{{ .Environment.CIRCLE_CACHE_VERSION }}-{{ arch }}-npm-lock-{{ .Branch }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+  save-npm-cache:
+    steps:
+      - save_cache:
+          key: v{{ .Environment.CIRCLE_CACHE_VERSION }}-{{ arch }}-npm-cache-{{ .Branch }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm/_cacache
+
+jobs:
+  node-v6:
+    docker:
+      - image: node:6-browsers
+    steps:
+      - test-nodejs-v6
+  node-v8:
+    docker:
+      - image: node:8-browsers
+    steps:
+      - test-nodejs
+  node-v10:
+    docker:
+      - image: node:10-browsers
+    steps:
+      - test-nodejs
+  node-v11:
+    docker:
+      - image: node:11-browsers
+    steps:
+      - test-nodejs
+
+workflows:
+  node-multi-build:
+    jobs:
+      - node-v6
+      - node-v8
+      - node-v10
+      - node-v11
