@@ -76,26 +76,26 @@ commands:
 jobs:
   node-v6:
     docker:
-      # - image: node:6.16.0-browsers
-      - image: node:6-stretch-browsers
+      # - image: circleci/node:6.16.0-browsers
+      - image: circleci/node:6-stretch-browsers
     steps:
       - test-nodejs-v6
   node-v8:
     docker:
-      # - image: node:8.9.4-browsers
-      - image: node:8-stretch-browsers
+      # - image: circleci/node:8.9.4-browsers
+      - image: circleci/node:8-stretch-browsers
     steps:
       - test-nodejs
   node-v10:
     docker:
-      # - image: node:10.9.0-browsers
-      - image: 10-stretch-browsers
+      # - image: circleci/node:10.9.0-browsers
+      - image: circleci/10-stretch-browsers
     steps:
       - test-nodejs
   node-v11:
     docker:
-      # - image: node:11.9-browsers
-      - image: node:11-stretch-browsers
+      # - image: circleci/node:11.9-browsers
+      - image: circleci/node:11-stretch-browsers
     steps:
       - test-nodejs
 
