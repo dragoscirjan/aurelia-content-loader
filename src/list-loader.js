@@ -15,7 +15,7 @@ const svgTemplate = `<rect if.bind="!bullets" repeat.for="i of lineRange" x="0" 
 `;
 
 /**
- * 
+ * Content Loader class for list.
  */
 @containerless
 @customElement('svg-list-loader')

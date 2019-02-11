@@ -1,4 +1,4 @@
-import { bindable, containerless, customElement, inlineView } from 'aurelia-templating';
+import { containerless, customElement, inlineView } from 'aurelia-templating';
 
 import { SvgContentLoader } from './content-loader';
 import { template } from './template';
@@ -16,7 +16,7 @@ const svgTemplate = `<circle if.bind="imageAsCircle" cx.bind="imageRadius" cy.bi
 <rect x="0" y.bind="instagramImageY" rx.bind="cornerRadius" ry.bind="cornerRadius" width.bind="width" height.bind="instagramImageHeight" />`;
 
 /**
- * 
+ * Content Loader class for Instagram post.
  */
 @containerless
 @customElement('svg-instagram-loader')
@@ -31,7 +31,7 @@ export class SvgInstagramLoader extends SvgContentLoader {
     this.addClass('svg-loader__inner--instagram');
   }
   /**
-   * 
+   * @var {Number}
    */
   get instagramImageY() {
     return this.imageDiameter + 20;
@@ -42,7 +42,7 @@ export class SvgInstagramLoader extends SvgContentLoader {
   get instagramImageHeight() {
     let height = this.height - this.instagramImageY;
     if (height <= 0 && !this.logged) {
-      console.warn('Instagram loader height too small.');
+      console.warn('Instagram loader height too small.'); // eslint-disable-line no-console
       this.logged = false;
     }
     return height < 0 ? 0 : height;

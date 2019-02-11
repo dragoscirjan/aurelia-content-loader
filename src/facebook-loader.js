@@ -1,4 +1,4 @@
-import { bindable, containerless, customElement, inlineView } from 'aurelia-templating';
+import { containerless, customElement, inlineView } from 'aurelia-templating';
 
 import { SvgContentLoader } from './content-loader';
 import { template } from './template';
@@ -24,7 +24,7 @@ const svgTemplate = `<circle if.bind="imageAsCircle" cx.bind="imageRadius" cy.bi
 />`;
 
 /**
- * 
+ * Content Loader class for Facebook post.
  */
 @containerless
 @customElement('svg-facebook-loader')
@@ -45,7 +45,7 @@ export class SvgFacebookLoader extends SvgContentLoader {
   get lineRange() {
     let remainingHeight = this.height - this.imageDiameter - 10;
     if (remainingHeight <= 0) {
-      console.warn('Facebook loader height too small. Can\'t add text lines.' );
+      console.warn('Facebook loader height too small. Can\'t add text lines.' ); // eslint-disable-line no-console
       return this.arrayRangeFromNumber(1);
     }
     let completeLineHeight = this.lineHeight + 2 * this.linePadding;

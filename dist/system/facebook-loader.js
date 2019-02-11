@@ -3,7 +3,7 @@
 System.register(["aurelia-templating", "./content-loader", "./template"], function (_export, _context) {
   "use strict";
 
-  var bindable, containerless, customElement, inlineView, SvgContentLoader, template, _dec, _dec2, _class, divTemplate, svgTemplate, SvgFacebookLoader;
+  var containerless, customElement, inlineView, SvgContentLoader, template, _dec, _dec2, _class, divTemplate, svgTemplate, SvgFacebookLoader;
 
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -19,7 +19,6 @@ System.register(["aurelia-templating", "./content-loader", "./template"], functi
 
   return {
     setters: [function (_aureliaTemplating) {
-      bindable = _aureliaTemplating.bindable;
       containerless = _aureliaTemplating.containerless;
       customElement = _aureliaTemplating.customElement;
       inlineView = _aureliaTemplating.inlineView;

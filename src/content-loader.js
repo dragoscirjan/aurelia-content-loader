@@ -7,7 +7,7 @@ import { defaultDivTemplate, defaultSvgTemplate, template } from './template';
 const CSS_CLASS_ANIMATED = 'svg-loader__inner--animated';
 
 /**
- *
+ * Content Loader class for generic items.
  */
 @containerless
 @customElement('svg-content-loader')

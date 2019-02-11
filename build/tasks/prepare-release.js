@@ -2,7 +2,7 @@ const args = require('../args');
 const { build } = require('./build');
 const { lint } = require('./lint');
 const bump = require('gulp-bump');
-const changelog = require('conventional-changelog');
+const conventionalChangelog = require('conventional-changelog');
 const { dest, src } = require('gulp');
 const fs = require('fs');
 const paths = require('../paths');
@@ -10,7 +10,8 @@ const { series } = require('gulp');
 
 // utilizes the bump plugin to bump the
 // semver for the repo
-exports.bumpVersion = function() {
+
+const bumpVersion = function() {
   return src(['./package.json'])
     .pipe(bump({type: args.bump})) //major|minor|patch|prerelease
     .pipe(dest('./'));
@@ -18,10 +19,10 @@ exports.bumpVersion = function() {
 
 // generates the CHANGELOG.md file based on commit
 // from git commit messages
-exports.changelog = function(callback) {
+const changelog = function(callback) {
   const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 
-  return changelog({
+  return conventionalChangelog({
     repository: pkg.repository.url,
     version: pkg.version,
     file: paths.doc + '/CHANGELOG.md'
@@ -30,4 +31,6 @@ exports.changelog = function(callback) {
   });
 };
 
+exports.bumpVersion = bumpVersion;
+exports.changelog = changelog;
 exports.prepareRelease = series(build, lint, bumpVersion, changelog);
