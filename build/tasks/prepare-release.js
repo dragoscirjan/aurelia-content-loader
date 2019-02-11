@@ -1,5 +1,6 @@
 const args = require('../args');
 const { build } = require('./build');
+const { lint } = require('./lint');
 const bump = require('gulp-bump');
 const changelog = require('conventional-changelog');
 const { dest, src } = require('gulp');
