@@ -18,8 +18,6 @@
 [![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://dragoscirjan.me/paypal)
 [![Buy an item on our wishlist for us](https://img.shields.io/badge/wishlist-donate-yellow.svg)](https://dragoscirjan.me/wishlist) -->
 
-
-
 SVG-Powered component to easily create placeholder loadings (like Facebook's cards loading).
 
 ## Index
