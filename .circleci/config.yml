@@ -71,25 +71,31 @@ commands:
           paths:
             - ~/.npm/_cacache
 
+# Obtain versions with: `curl -sSL https://registry.hub.docker.com/v1/repositories/circleci/node/tags | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}' | sort | grep -e "^11."`
+
 jobs:
   node-v6:
     docker:
-      - image: node:6-browsers
+      # - image: node:6.16.0-browsers
+      - image: node:6-stretch-browsers
     steps:
       - test-nodejs-v6
   node-v8:
     docker:
-      - image: node:8-browsers
+      # - image: node:8.9.4-browsers
+      - image: node:8-stretch-browsers
     steps:
       - test-nodejs
   node-v10:
     docker:
-      - image: node:10-browsers
+      # - image: node:10.9.0-browsers
+      - image: 10-stretch-browsers
     steps:
       - test-nodejs
   node-v11:
     docker:
-      - image: node:11-browsers
+      # - image: node:11.9-browsers
+      - image: node:11-stretch-browsers
     steps:
       - test-nodejs
 
