@@ -11,12 +11,12 @@
   "bugs": {
     "url": "https://github.com/aurelia/skeleton-plugin/issues"
   },
-  "license": "CC0-1.0",
-  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "license": "MIT",
+  "author": "Dragos Cirjan <dragos.cirjan@gmail.com> (http://dragosc.itmcd.ro/)",
   "main": "dist/commonjs/index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/aurelia/skeleton-plugin"
+    "url": "https://github.com/aurelia/skeleton-plugin"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.0",

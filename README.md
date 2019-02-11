@@ -28,18 +28,18 @@ SVG-Powered component to easily create placeholder loadings (like Facebook's car
   - [Usage](#usage)
   - [Options](#options)
   - [Examples](#examples)
-        - [Facebook Component](#facebook-component)
-        - [Instagram Component](#instagram-component)
-        - [Code Component](#code-component)
-          - [Additional Options](#additional-options)
-        - [List Component](#list-component)
-          - [Additional Options](#additional-options-1)
-        - [Bullet list Style](#bullet-list-style)
-    - [Custom Style](#custom-style)
-    - [Extending component](#extending-component)
-      - [Javascript Class](#javascript-class)
-      - [Importing new component](#importing-new-component)
-      - [Using within HTML Templates](#using-within-html-templates)
+    - [Facebook Component](#facebook-component)
+    - [Instagram Component](#instagram-component)
+    - [Code Component](#code-component)
+      - [Additional Options](#additional-options)
+    - [List Component](#list-component)
+      - [Additional Options](#additional-options-1)
+      - [Bullet list Style](#bullet-list-style)
+    - [Custom Component](#custom-component)
+  - [Extending component](#extending-component)
+    - [Javascript Class](#javascript-class)
+    - [Importing new component](#importing-new-component)
+    - [Using within HTML Templates](#using-within-html-templates)
   - [Similar packages](#similar-packages)
   - [Development](#development)
   - [License](#license)
@@ -85,7 +85,7 @@ aurelia.use.plugin(PLATFORM.moduleName('aurelia-content-loader'));
 
 ## Examples
 
-##### Facebook Component
+### Facebook Component
 
 ```html
 <svg-facebook-loader
@@ -95,7 +95,7 @@ aurelia.use.plugin(PLATFORM.moduleName('aurelia-content-loader'));
 ></svg-facebook-loader>
 ```
 
-##### Instagram Component
+### Instagram Component
 
 ```html
 <svg-instagram-loader
@@ -106,7 +106,7 @@ aurelia.use.plugin(PLATFORM.moduleName('aurelia-content-loader'));
 ></svg-instagram-loader>
 ```
 
-##### Code Component
+### Code Component
 
 ```html
 <svg-code-loader
@@ -114,13 +114,13 @@ aurelia.use.plugin(PLATFORM.moduleName('aurelia-content-loader'));
 ></svg-code-loader>
 ```
 
-###### Additional Options
+#### Additional Options
 
 | Option | Type | Default | Description |
 |---|---|---|---|
 | `max-code-cuhnks` | Number | `5` | _Optional._ Number of chunks in a line. |
 
-##### List Component
+### List Component
 
 ```html
 <svg-list-loader
@@ -129,7 +129,7 @@ aurelia.use.plugin(PLATFORM.moduleName('aurelia-content-loader'));
 ></svg-list-loader>
 ```
 
-###### Additional Options
+#### Additional Options
 
 | Option | Type | Default | Description |
 |---|---|---|---|
@@ -137,7 +137,7 @@ aurelia.use.plugin(PLATFORM.moduleName('aurelia-content-loader'));
 | `bullets-as-squares` | Boolean | `false` | _Optional._ Activate rendering bullets as squares with `true`, `1`, `any`. |
 | `bullet-radius` | Number | `5` | _Optional._ Set the radius of the list's bullets. |
 
-##### Bullet list Style
+#### Bullet list Style
 
 ```html
 <svg-list-loader
@@ -147,7 +147,7 @@ aurelia.use.plugin(PLATFORM.moduleName('aurelia-content-loader'));
 ></svg-list-loader>
 ```
 
-### Custom Style
+### Custom Component
 
 ```html
 <svg-content-loader
@@ -163,9 +163,9 @@ aurelia.use.plugin(PLATFORM.moduleName('aurelia-content-loader'));
 </svg-content-loader>
 ```
 
-### Extending component
+## Extending component
 
-#### Javascript Class
+### Javascript Class
 
 Let's say `./resources/elements/custom-loader.js`.
 
@@ -196,7 +196,7 @@ const svgTemplate = `<rect x="0" y="0" rx="3" ry="3" width="60" height="60"></re
 export class SvgCustomLoader extends SvgContentLoader { }
 ```
 
-#### Importing new component
+### Importing new component
 
 Add to `./resources/index.js`.
 
@@ -209,7 +209,7 @@ export function configure(aurelia) {
 
 ```
 
-#### Using within HTML Templates
+### Using within HTML Templates
 
 ```html
 <svg-custom-loader
