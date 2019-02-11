@@ -16,7 +16,7 @@ exports.build = build;
 
 // build/tasks/dev
 exports['build-dev-env'] = buildDevEnv;
-exports['updat-own-deps'] = updatOwnDeps;
+exports['update-own-deps'] = updatOwnDeps;
 
 // build/tasks/doc
 exports.doc = series(docGenerate, doc);
