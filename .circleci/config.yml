@@ -18,16 +18,16 @@ commands:
           command: npm i
       - run:
           name: Install gulp cli
-          command: npm i -g gulp-cli
+          command: npm i -D gulp-cli
       - run:
           name: Lint
-          command: gulp lint
+          command: npx gulp lint
       - run:
           name: Build
-          command: gulp lint
+          command: npx gulp lint
       # - run:
       #     name: Test
-      #     command: gulp test
+      #     command: npx gulp test
       - save-npm-cache
   test-nodejs-v6:
     steps:
@@ -46,16 +46,16 @@ commands:
           command: npm install
       - run:
           name: Install gulp cli
-          command: npm install -g gulp-cli
+          command: npm install -D gulp-cli
       - run:
           name: Lint
-          command: gulp lint
+          command: npx gulp lint
       - run:
           name: Build
-          command: gulp lint
+          command: npx gulp lint
       # - run:
       #     name: Test
-      #     command: gulp test
+      #     command: npx gulp test
       - save-npm-lock
       - save-npm-cache
   save-npm-lock:
@@ -89,7 +89,7 @@ jobs:
   node-v10:
     docker:
       # - image: circleci/node:10.9.0-browsers
-      - image: circleci/10-stretch-browsers
+      - image: circleci/node:10-stretch-browsers
     steps:
       - test-nodejs
   node-v11:
