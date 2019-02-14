@@ -239,7 +239,7 @@ Fork the repo then clone it
 
 `$ yarn dev`: Run the docz to see your changes;
 
-> Momentarely I do not use the testing environment. I'm using [this project](github.com:dragoscirjan/aurelia-content-loader-dev) to develop. You're all invited to help with the unit tests, if you wish to.
+> Momentarely I do not use the testing environment. I'm using [this project](https://github.com/dragoscirjan/aurelia-plugins-dev) to develop. You're all invited to help with the unit tests, if you wish to.
 
 `$ yarn test`: Run all tests: type checking and unit tests;
 
