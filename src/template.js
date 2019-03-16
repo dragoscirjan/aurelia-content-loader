@@ -1,4 +1,3 @@
-
 /** @var {String} */
 export const defaultDivTemplate = '<slot></slot>';
 
@@ -11,7 +10,7 @@ export const defaultSvgTemplate = '';
  * @param {String} svgTemplate
  * @return {String}
  */
-export const template = (divTemplate, svgTemplate) =>`<template>
+export const template = (divTemplate, svgTemplate) => `<template>
   <div
     animate.bind="animate"
     class="svg-loader"

@@ -1,4 +1,4 @@
-import { bindable, containerless, customElement, inlineView  } from 'aurelia-templating';
+import { bindable, containerless, customElement, inlineView } from 'aurelia-templating';
 import { inject } from 'aurelia-framework';
 import UUID from 'uuid-js';
 
@@ -90,7 +90,7 @@ export class SvgContentLoader {
    * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio
    * @var {String}
    */
-  @bindable svgPreserveAspectRatio='none';
+  @bindable svgPreserveAspectRatio = 'none';
   /**
    * @var {String}
    * @private
@@ -141,13 +141,16 @@ export class SvgContentLoader {
    * @return {Array}
    */
   arrayRangeFromNumber(length) {
-    return Array(length).join(0).split(0).map((v, i) => i + 1);
+    return Array(length)
+      .join(0)
+      .split(0)
+      .map((v, i) => i + 1);
   }
   /**
    * Attached Event
    */
   attached(...args) {
-    this.element = (this.element.nodeType !== 8) ? this.element : this.element.previousElementSibling;
+    this.element = this.element.nodeType !== 8 ? this.element : this.element.previousElementSibling;
 
     this.animateChanged(this.animate);
 
@@ -191,7 +194,7 @@ export class SvgContentLoader {
   get lineRange() {
     let completeLineHeight = this.lineHeight + 2 * this.linePadding;
     let rangeLength = Math.floor(this.height / completeLineHeight);
-    rangeLength = (this.lineMaxNumber < rangeLength) ? this.lineMaxNumber : rangeLength;
+    rangeLength = this.lineMaxNumber < rangeLength ? this.lineMaxNumber : rangeLength;
     return this.arrayRangeFromNumber(rangeLength);
   }
   /**
@@ -200,7 +203,7 @@ export class SvgContentLoader {
    * @return {Number}
    */
   lineY(i) {
-    return i * this.linePadding + ((i - 1) * (this.linePadding + this.lineHeight));
+    return i * this.linePadding + (i - 1) * (this.linePadding + this.lineHeight);
   }
   /**
    * Remove a CSS class from a HTML element
