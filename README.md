@@ -22,27 +22,32 @@ SVG-Powered component to easily create placeholder loadings (like Facebook's car
 
 ## Index
 
+<!-- TOC -->
+
 - [Aurelia Content Loader](#aurelia-content-loader)
-  - [Index](#index)
-  - [Getting Started](#getting-started)
-  - [Usage](#usage)
-  - [Options](#options)
-  - [Examples](#examples)
-    - [Facebook Component](#facebook-component)
-    - [Instagram Component](#instagram-component)
-    - [Code Component](#code-component)
-      - [Additional Options](#additional-options)
-    - [List Component](#list-component)
-      - [Additional Options](#additional-options-1)
-      - [Bullet list Style](#bullet-list-style)
-    - [Custom Component](#custom-component)
-  - [Extending component](#extending-component)
-    - [Javascript Class](#javascript-class)
-    - [Importing new component](#importing-new-component)
-    - [Using within HTML Templates](#using-within-html-templates)
-  - [Similar packages](#similar-packages)
-  - [Development](#development)
-  - [License](#license)
+    - [Index](#index)
+    - [Getting Started](#getting-started)
+    - [Usage](#usage)
+    - [Options](#options)
+    - [Examples](#examples)
+        - [Facebook Component](#facebook-component)
+        - [Instagram Component](#instagram-component)
+        - [Code Component](#code-component)
+            - [Additional Options](#additional-options)
+        - [List Component](#list-component)
+            - [Additional Options](#additional-options-1)
+            - [Bullet list Style](#bullet-list-style)
+        - [Custom Component](#custom-component)
+    - [Extending component](#extending-component)
+        - [Javascript Class](#javascript-class)
+        - [Importing new component](#importing-new-component)
+        - [Using within HTML Templates](#using-within-html-templates)
+    - [Similar packages](#similar-packages)
+    - [Development](#development)
+    - [Issues](#issues)
+    - [License](#license)
+
+<!-- /TOC -->
 
 ## Getting Started
 
@@ -239,7 +244,7 @@ Fork the repo then clone it
 
 `$ yarn dev`: Run the docz to see your changes;
 
-> Momentarely I do not use the testing environment. I'm using [this project](https://github.com/dragoscirjan/aurelia-plugins-dev) to develop. You're all invited to help with the unit tests, if you wish to.
+> NOTE: Momentarely I do not use the testing environment. I'm using [this project](https://github.com/dragoscirjan/aurelia-plugins-dev) to develop. You're all invited to help with the unit tests, if you wish to.
 
 `$ yarn test`: Run all tests: type checking and unit tests;
 
@@ -249,6 +254,9 @@ Fork the repo then clone it
 
 `$ yarn tsc:watch`: Typescript checking with watching;
 
+## Issues
+
+For issues, please reffer to this repository's [issue page](https://github.com/dragoscirjan/aurelia-google-recaptcha/issues).
 
 ## License
 
