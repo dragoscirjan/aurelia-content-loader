@@ -1,0 +1,50 @@
+.svg-loader {
+  padding: 1rem;
+  margin: 3rem auto;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.075);
+  max-width: 100%;
+}
+.svg-loader__inner {
+  background: #f6f7f8;
+  background: #eeeeee;
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
+  background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  -webkit-background-size: 500% 150%;
+  background-size: 500% 150%;
+  min-height: 110px;
+  transform: translateZ(0);
+}
+.svg-loader__inner--animated {
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+/* iPhone 6+ */
+@media only screen and (max-width: 414px) {
+  .card {
+    width: 80%;
+  }
+}
