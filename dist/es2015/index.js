@@ -1,32 +1,32 @@
-"use strict";
+'use strict';
 
 exports.__esModule = true;
 exports.configure = configure;
 exports.Config = void 0;
 
-var _aureliaPal = require("aurelia-pal");
+var _aureliaPal = require('aurelia-pal');
 
-var _codeLoader = require("./code-loader");
+var _codeLoader = require('./code-loader');
 
 exports.SvgCodeLoader = _codeLoader.SvgCodeLoader;
 
-var _contentLoader = require("./content-loader");
+var _contentLoader = require('./content-loader');
 
 exports.SvgContentLoader = _contentLoader.SvgContentLoader;
 
-var _facebookLoader = require("./facebook-loader");
+var _facebookLoader = require('./facebook-loader');
 
 exports.SvgFacebookLoader = _facebookLoader.SvgFacebookLoader;
 
-var _instagramLoader = require("./instagram-loader");
+var _instagramLoader = require('./instagram-loader');
 
 exports.SvgInstagramLoader = _instagramLoader.SvgInstagramLoader;
 
-var _listLoader = require("./list-loader");
+var _listLoader = require('./list-loader');
 
 exports.SvgListLoader = _listLoader.SvgListLoader;
 
-var Config = function () {
+var Config = (function() {
   function Config() {}
 
   var _proto = Config.prototype;
@@ -40,7 +40,7 @@ var Config = function () {
   };
 
   return Config;
-}();
+})();
 
 exports.Config = Config;
 

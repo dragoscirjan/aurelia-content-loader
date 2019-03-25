@@ -1,4 +1,3 @@
-
 import { PLATFORM } from 'aurelia-pal';
 
 import { SvgCodeLoader } from './code-loader';

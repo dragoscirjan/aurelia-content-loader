@@ -45,12 +45,12 @@ export class SvgFacebookLoader extends SvgContentLoader {
   get lineRange() {
     let remainingHeight = this.height - this.imageDiameter - 10;
     if (remainingHeight <= 0) {
-      console.warn('Facebook loader height too small. Can\'t add text lines.' ); // eslint-disable-line no-console
+      console.warn("Facebook loader height too small. Can't add text lines."); // eslint-disable-line no-console
       return this.arrayRangeFromNumber(1);
     }
     let completeLineHeight = this.lineHeight + 2 * this.linePadding;
     let rangeLength = Math.floor(remainingHeight / completeLineHeight);
-    rangeLength = (this.lineMaxNumber < rangeLength) ? this.lineMaxNumber : rangeLength;
+    rangeLength = this.lineMaxNumber < rangeLength ? this.lineMaxNumber : rangeLength;
     return this.arrayRangeFromNumber(rangeLength);
   }
   /**
@@ -59,7 +59,7 @@ export class SvgFacebookLoader extends SvgContentLoader {
    * @return {Number}
    */
   lineY(i) {
-    return this.imageDiameter + 10 + i * this.linePadding + ((i - 1) * (this.linePadding + this.lineHeight));
+    return this.imageDiameter + 10 + i * this.linePadding + (i - 1) * (this.linePadding + this.lineHeight);
   }
   /**
    * Getter - Compute the width of the line.
@@ -69,7 +69,7 @@ export class SvgFacebookLoader extends SvgContentLoader {
     if (!this.lineWidthRandomize) {
       return this.width;
     }
-    return this.width / 4 * 3 + Math.random() * this.width / 4;
+    return (this.width / 4) * 3 + (Math.random() * this.width) / 4;
   }
   /**
    * Getter - Compute the space between the title lines.
